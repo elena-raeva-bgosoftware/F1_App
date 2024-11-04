@@ -8,7 +8,6 @@ public class UsernameValidator<TUser> : IUserValidator<TUser> where TUser : clas
     {
         var userName = manager.GetUserNameAsync(user).Result;
 
-        // Проверка дали потребителското име е валиден имейл
         var emailRegex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
 
         if (!emailRegex.IsMatch(userName))
