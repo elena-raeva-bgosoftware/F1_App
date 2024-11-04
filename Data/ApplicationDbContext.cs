@@ -16,7 +16,7 @@ namespace F1_App.Data
         public DbSet<RaceResult> RaceResults { get; set; }
         public DbSet<UpcomingRace> UpcomingRaces { get; set; }
         public DbSet<F1History> F1Histories { get; set; }
-
+        //Test commit
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
