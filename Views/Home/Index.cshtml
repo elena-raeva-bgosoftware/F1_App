@@ -1,0 +1,51 @@
+﻿@page
+@{
+    //ViewData["Title"] = "Formula 1 Home Page";
+}
+
+<style>
+    /* Контейнер за фон */
+    .background-container {
+        background-image: url('https://media.formula1.com/image/upload/t_16by9South/f_auto/q_auto/v1688545782/fom-website/2023/Austria/GettyImages-1480493614.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .btn-f1 {
+        background-color: #ff0000;
+        color: white;
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-f1:hover {
+            background-color: #cc0000;
+        }
+</style>
+
+<div class="background-container">
+    <div class="button-container">
+        <a href="/Drivers" class="btn-f1">Drivers</a>
+        <a href="/Tracks" class="btn-f1">Tracks</a>
+        <a href="/RaceResults" class="btn-f1">Race Results</a>
+        <a href="/F1History" class="btn-f1">F1 History</a>
+    </div>
+</div>

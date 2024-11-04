@@ -1,0 +1,24 @@
+﻿@model IEnumerable<F1_App.Data.Models.Track>
+
+<h1>Tracks</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Length (km)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var track in Model)
+        {
+            <tr>
+                <td><img src="@track.PhotoUrl" alt="@track.Name" width="100" /></td>
+                <td>@track.Name</td>
+                <td>@track.Location</td>
+                <td>@track.LengthKm</td>
+            </tr>
+        }
+    </tbody>
+</table>
