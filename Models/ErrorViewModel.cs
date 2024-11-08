@@ -1,4 +1,4 @@
-namespace F1_App.Models
+namespace F1_Web_App.Models
 {
     public class ErrorViewModel
     {
