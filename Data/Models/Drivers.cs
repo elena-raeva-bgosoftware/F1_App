@@ -1,4 +1,5 @@
 ﻿using System;
+using F1_Web_App.Common;
 using System.ComponentModel.DataAnnotations;
 
 namespace F1_Web_App.Models
@@ -13,15 +14,15 @@ namespace F1_Web_App.Models
         public int DriverNumber { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(ValidationConstants.DriverNameMaxLength)]
         public string Name { get; set; } = null!;
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(ValidationConstants.DriverTeamNameMaxLength)]
         public string Team { get; set; } = null!;
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(ValidationConstants.DriverNationalityMaxLength)]
         public string Nationality { get; set; } = null!;
 
         [Required]
