@@ -6,7 +6,7 @@ namespace F1_Web_App.Models
     public class Driver
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [Range(1, 99, ErrorMessage = "Driver number must be between 1 and 99.")]
@@ -14,18 +14,18 @@ namespace F1_Web_App.Models
 
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
         [Required]
         [MaxLength(50)]
-        public string Team { get; set; } 
+        public string Team { get; set; } = null!;
 
         [Required]
         [MaxLength(50)]
-        public string Nationality { get; set; }  
+        public string Nationality { get; set; } = null!;
 
         [Required]
         [Range(0, int.MaxValue, ErrorMessage = "Wins count cannot be negative.")]
-        public int Wins { get; set; } 
+        public int Wins { get; set; }
     }
 }
