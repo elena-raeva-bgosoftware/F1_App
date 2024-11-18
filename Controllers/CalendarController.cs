@@ -6,22 +6,21 @@ using F1_Web_App.Models;
 
 namespace F1_Web_App.Controllers
 {
-    public class ParticipationsController : Controller
+    public class CalendarController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ParticipationsController(ApplicationDbContext context)
+        public CalendarController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         // GET: ParticipationViewModels
-        public async Task<IActionResult> ListParticipation()
+        public async Task<IActionResult> List()
         {
             var model = await _context.CircuitSeasons
                     .Include(cs => cs.Circuit)
-                    .ThenInclude(t => t.Country)
-                .Select(p => new ParticipationListViewModel
+                .Select(p => new CircuitSeasonViewModel
                 {
                     Id = p.Id,
                     CircuitName = p.Circuit.Name,

@@ -13,6 +13,6 @@ namespace F1_Web_App.Data.Models
 
         public DateTime? Date { get; set; }
 
-        public ICollection<Participation> Participations { get; set; } = new List<Participation>();
+        public ICollection<Result> Results { get; set; } = new List<Result>();
     }
 }

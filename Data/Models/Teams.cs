@@ -19,6 +19,6 @@ namespace F1_Web_App.Data.Models
 
         public string ImageUrl { get; set; } = null!;
 
-        public ICollection<Participation> Participations { get; set; } = new List<Participation>();
+        public ICollection<Result> Participations { get; set; } = new List<Result>();
     }
 }

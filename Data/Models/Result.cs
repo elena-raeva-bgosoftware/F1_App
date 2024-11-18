@@ -2,7 +2,7 @@
 
 namespace F1_Web_App.Data.Models
 {
-    public class Participation
+    public class Result
     {
         public int Id { get; set; }
 
