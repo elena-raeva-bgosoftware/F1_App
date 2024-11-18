@@ -13,7 +13,7 @@ namespace F1_Web_App.Data
         }
 
         public DbSet<Driver> Drivers { get; set; }
-        public DbSet<Team> Teams { get; set; } 
+        public DbSet<Team> Teams { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Circuit> Circuits { get; set; }
         public DbSet<CircuitSeason> CircuitSeasons { get; set; }

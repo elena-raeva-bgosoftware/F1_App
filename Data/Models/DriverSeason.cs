@@ -7,6 +7,8 @@ namespace F1_Web_App.Data.Models
     {
         public int Id { get; set; }
 
+        public string Name { get; set; } = null!;
+
         public int? ContractedTeamId { get; set; }
 
         [Required]
@@ -16,7 +18,7 @@ namespace F1_Web_App.Data.Models
         public Team ContractedTeam { get; set; } = null!;
 
         [Range(1, 99, ErrorMessage = "Driver number must be between 1 and 99.")]
-        public int? SpecialNumber { get; set; }
+        public int SpecialNumber { get; set; }
 
     }
 }
