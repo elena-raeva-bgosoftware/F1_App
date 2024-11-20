@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace F1_Web_App.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241110115706_InitialStructure")]
-    partial class InitialStructure
+    [Migration("20241120075411_AddUpdatedResult")]
+    partial class AddUpdatedResult
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,9 +33,8 @@ namespace F1_Web_App.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
@@ -50,28 +49,9 @@ namespace F1_Web_App.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CountryId");
+
                     b.ToTable("Circuits");
-                });
-
-            modelBuilder.Entity("F1_Web_App.Data.Models.CircuitSeason", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CircuitId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CircuitId");
-
-                    b.ToTable("CircuitSeasons");
                 });
 
             modelBuilder.Entity("F1_Web_App.Data.Models.Country", b =>
@@ -100,9 +80,6 @@ namespace F1_Web_App.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CountryId")
-                        .HasColumnType("int");
-
                     b.Property<int>("DriverNumber")
                         .HasColumnType("int");
 
@@ -118,73 +95,66 @@ namespace F1_Web_App.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("CountryId");
-
-                    b.ToTable("Drivers");
-                });
-
-            modelBuilder.Entity("F1_Web_App.Data.Models.DriverSeason", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("ContractedTeamId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("DriverId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SpecialNumber")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Year")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ContractedTeamId");
-
-                    b.HasIndex("DriverId");
-
-                    b.ToTable("DriverSeasons");
-                });
-
-            modelBuilder.Entity("F1_Web_App.Data.Models.Participation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CircuitSeasonId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("DriverId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DriverSeasonId")
-                        .HasColumnType("int");
-
                     b.Property<int>("TeamId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CircuitSeasonId");
+                    b.HasIndex("TeamId");
+
+                    b.ToTable("Drivers");
+                });
+
+            modelBuilder.Entity("F1_Web_App.Data.Models.Event", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CircuitId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EventDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CircuitId");
+
+                    b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("F1_Web_App.Data.Models.Result", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("CircuitId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DriverId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Points")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CircuitId");
 
                     b.HasIndex("DriverId");
 
-                    b.HasIndex("DriverSeasonId");
+                    b.HasIndex("EventId");
 
-                    b.HasIndex("TeamId");
-
-                    b.ToTable("Participations");
+                    b.ToTable("Result");
                 });
 
             modelBuilder.Entity("F1_Web_App.Data.Models.Team", b =>
@@ -416,18 +386,7 @@ namespace F1_Web_App.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("F1_Web_App.Data.Models.CircuitSeason", b =>
-                {
-                    b.HasOne("F1_Web_App.Data.Models.Circuit", "Circuit")
-                        .WithMany("CircuitSeasons")
-                        .HasForeignKey("CircuitId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Circuit");
-                });
-
-            modelBuilder.Entity("F1_Web_App.Data.Models.Driver", b =>
+            modelBuilder.Entity("F1_Web_App.Data.Models.Circuit", b =>
                 {
                     b.HasOne("F1_Web_App.Data.Models.Country", "Country")
                         .WithMany()
@@ -438,48 +397,49 @@ namespace F1_Web_App.Migrations
                     b.Navigation("Country");
                 });
 
-            modelBuilder.Entity("F1_Web_App.Data.Models.DriverSeason", b =>
+            modelBuilder.Entity("F1_Web_App.Data.Models.Driver", b =>
                 {
-                    b.HasOne("F1_Web_App.Data.Models.Team", "ContractedTeam")
-                        .WithMany()
-                        .HasForeignKey("ContractedTeamId");
-
-                    b.HasOne("F1_Web_App.Data.Models.Driver", null)
-                        .WithMany("DriverSeasons")
-                        .HasForeignKey("DriverId");
-
-                    b.Navigation("ContractedTeam");
-                });
-
-            modelBuilder.Entity("F1_Web_App.Data.Models.Participation", b =>
-                {
-                    b.HasOne("F1_Web_App.Data.Models.CircuitSeason", "CircuitSeason")
-                        .WithMany("Participations")
-                        .HasForeignKey("CircuitSeasonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("F1_Web_App.Data.Models.Driver", null)
-                        .WithMany("Participations")
-                        .HasForeignKey("DriverId");
-
-                    b.HasOne("F1_Web_App.Data.Models.DriverSeason", "DriverSeason")
-                        .WithMany()
-                        .HasForeignKey("DriverSeasonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("F1_Web_App.Data.Models.Team", "Team")
-                        .WithMany("Participations")
+                        .WithMany("Drivers")
                         .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CircuitSeason");
-
-                    b.Navigation("DriverSeason");
-
                     b.Navigation("Team");
+                });
+
+            modelBuilder.Entity("F1_Web_App.Data.Models.Event", b =>
+                {
+                    b.HasOne("F1_Web_App.Data.Models.Circuit", "Circuit")
+                        .WithMany()
+                        .HasForeignKey("CircuitId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Circuit");
+                });
+
+            modelBuilder.Entity("F1_Web_App.Data.Models.Result", b =>
+                {
+                    b.HasOne("F1_Web_App.Data.Models.Circuit", null)
+                        .WithMany("Results")
+                        .HasForeignKey("CircuitId");
+
+                    b.HasOne("F1_Web_App.Data.Models.Driver", "Driver")
+                        .WithMany("Results")
+                        .HasForeignKey("DriverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("F1_Web_App.Data.Models.Event", "Event")
+                        .WithMany()
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Driver");
+
+                    b.Navigation("Event");
                 });
 
             modelBuilder.Entity("F1_Web_App.Data.Models.Team", b =>
@@ -546,24 +506,17 @@ namespace F1_Web_App.Migrations
 
             modelBuilder.Entity("F1_Web_App.Data.Models.Circuit", b =>
                 {
-                    b.Navigation("CircuitSeasons");
-                });
-
-            modelBuilder.Entity("F1_Web_App.Data.Models.CircuitSeason", b =>
-                {
-                    b.Navigation("Participations");
+                    b.Navigation("Results");
                 });
 
             modelBuilder.Entity("F1_Web_App.Data.Models.Driver", b =>
                 {
-                    b.Navigation("DriverSeasons");
-
-                    b.Navigation("Participations");
+                    b.Navigation("Results");
                 });
 
             modelBuilder.Entity("F1_Web_App.Data.Models.Team", b =>
                 {
-                    b.Navigation("Participations");
+                    b.Navigation("Drivers");
                 });
 #pragma warning restore 612, 618
         }

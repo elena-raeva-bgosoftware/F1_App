@@ -19,6 +19,6 @@ namespace F1_Web_App.Data.Models
 
         public string ImageUrl { get; set; } = null!;
 
-        public ICollection<Result> Participations { get; set; } = new List<Result>();
+        public ICollection<Driver> Drivers { get; set; } = new List<Driver>();
     }
 }

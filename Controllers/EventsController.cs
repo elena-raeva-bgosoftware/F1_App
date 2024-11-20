@@ -6,25 +6,25 @@ using F1_Web_App.Models;
 
 namespace F1_Web_App.Controllers
 {
-    public class CalendarController : Controller
+    public class EventsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public CalendarController(ApplicationDbContext context)
+        public EventsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: ParticipationViewModels
         public async Task<IActionResult> List()
         {
-            var model = await _context.CircuitSeasons
-                    .Include(cs => cs.Circuit)
-                .Select(p => new CircuitSeasonViewModel
+            var model = await _context.Events
+                .Select(p => new EventViewModel
                 {
                     Id = p.Id,
                     CircuitName = p.Circuit.Name,
-                    RaceDate = p.Date, ImageUrl = p.Circuit.ImageUrl
+                    Country = p.Circuit.Country.Name,
+                    EventDate = p.EventDate,
+                    ImageUrl = p.Circuit.ImageUrl
                 })
                 .Distinct()
                 .ToListAsync();

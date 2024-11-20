@@ -16,9 +16,8 @@ namespace F1_Web_App.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Circuit> Circuits { get; set; }
-        public DbSet<CircuitSeason> CircuitSeasons { get; set; }
-        public DbSet<Result> Calendar { get; set; }
-        public DbSet<DriverSeason> DriverSeasons { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Result> Results { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

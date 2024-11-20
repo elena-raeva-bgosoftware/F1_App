@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CircuitSeasonViewModel>
+﻿@model IEnumerable<EventViewModel>
 @{
     ViewData["Title"] = "Calendar";
 }
@@ -8,13 +8,13 @@
 </div>
 <hr />
 
-@foreach (var participation in Model)
+@foreach (var Circuit in Model)
 {
     <div class="row align-items-center mb-4 py-3" style="border-bottom: 1px solid #ccc;">
         <div class="col-md-2 text-center">
-            @if (!string.IsNullOrEmpty(participation.ImageUrl))
+            @if (!string.IsNullOrEmpty(Circuit.ImageUrl))
             {
-                <img src="@participation.ImageUrl" class="img-fluid" style="max-height: 100px; object-fit: contain;" alt="@participation.CircuitName" />
+                <img src="@Circuit.ImageUrl" class="img-fluid" style="max-height: 100px; object-fit: contain;" alt="@Circuit.CircuitName" />
             }
             else
             {
@@ -22,10 +22,10 @@
             }
         </div>
         <div class="col-md-4 text-start">
-            <h5 class="mb-0">@participation.CircuitName</h5>
+            <h5 class="mb-0">@Circuit.CircuitName</h5>
         </div>
         <div class="col-md-2 text-start">
-            <h5 class="mb-0">@participation.RaceDate?.ToString("d")</h5>
+            <h5 class="mb-0">@Circuit.EventDate.ToString("d")</h5>
         </div>
     </div>
 }

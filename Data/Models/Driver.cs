@@ -1,5 +1,6 @@
 ﻿using F1_Web_App.Common;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace F1_Web_App.Data.Models
 {
@@ -16,18 +17,17 @@ namespace F1_Web_App.Data.Models
         [MaxLength(ValidationConstants.DriverNameMaxLength)]
         public string Name { get; set; } = null!;
 
-        [Required]
-        public int CountryId { get; set; }
+        public int TeamId { get; set; }
 
-        public Country Country { get; set; } = null!;
+        [Required]
+        public  Team Team { get; set; } = null!;
 
         public string ImageUrl { get; set; } = null!;
 
         [Required]
         public bool IsRetired { get; set; }
 
-        public ICollection<DriverSeason> DriverSeasons { get; set; } = new List<DriverSeason>();
+        public ICollection<Result> Results { get; set; }
 
-        public ICollection<Result> Participations { get; set; } = new List<Result>();
     }
 }

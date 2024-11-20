@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace F1_Web_App.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialStructure : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -48,22 +48,6 @@ namespace F1_Web_App.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Circuits",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsLegacy = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Circuits", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -186,42 +170,21 @@ namespace F1_Web_App.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CircuitSeasons",
+                name: "Circuits",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CircuitId = table.Column<int>(type: "int", nullable: false),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CircuitSeasons", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CircuitSeasons_Circuits_CircuitId",
-                        column: x => x.CircuitId,
-                        principalTable: "Circuits",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Drivers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DriverNumber = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CountryId = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsRetired = table.Column<bool>(type: "bit", nullable: false)
+                    IsLegacy = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Drivers", x => x.Id);
+                    table.PrimaryKey("PK_Circuits", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Drivers_Countries_CountryId",
+                        name: "FK_Circuits_Countries_CountryId",
                         column: x => x.CountryId,
                         principalTable: "Countries",
                         principalColumn: "Id",
@@ -250,64 +213,61 @@ namespace F1_Web_App.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DriverSeasons",
+                name: "Events",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ContractedTeamId = table.Column<int>(type: "int", nullable: true),
-                    Year = table.Column<int>(type: "int", nullable: false),
-                    SpecialNumber = table.Column<int>(type: "int", nullable: true),
-                    DriverId = table.Column<int>(type: "int", nullable: true)
+                    CircuitId = table.Column<int>(type: "int", nullable: false),
+                    EventDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DriverSeasons", x => x.Id);
+                    table.PrimaryKey("PK_Events", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DriverSeasons_Drivers_DriverId",
-                        column: x => x.DriverId,
-                        principalTable: "Drivers",
-                        principalColumn: "Id");
+                        name: "FK_Events_Circuits_CircuitId",
+                        column: x => x.CircuitId,
+                        principalTable: "Circuits",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Result",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RaceId = table.Column<int>(type: "int", nullable: false),
+                    CircuitId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Result", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DriverSeasons_Teams_ContractedTeamId",
-                        column: x => x.ContractedTeamId,
-                        principalTable: "Teams",
+                        name: "FK_Result_Circuits_CircuitId",
+                        column: x => x.CircuitId,
+                        principalTable: "Circuits",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Participations",
+                name: "Drivers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CircuitSeasonId = table.Column<int>(type: "int", nullable: false),
-                    DriverSeasonId = table.Column<int>(type: "int", nullable: false),
+                    DriverNumber = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     TeamId = table.Column<int>(type: "int", nullable: false),
-                    DriverId = table.Column<int>(type: "int", nullable: true)
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsRetired = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Participations", x => x.Id);
+                    table.PrimaryKey("PK_Drivers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Participations_CircuitSeasons_CircuitSeasonId",
-                        column: x => x.CircuitSeasonId,
-                        principalTable: "CircuitSeasons",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Participations_DriverSeasons_DriverSeasonId",
-                        column: x => x.DriverSeasonId,
-                        principalTable: "DriverSeasons",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Participations_Drivers_DriverId",
-                        column: x => x.DriverId,
-                        principalTable: "Drivers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Participations_Teams_TeamId",
+                        name: "FK_Drivers_Teams_TeamId",
                         column: x => x.TeamId,
                         principalTable: "Teams",
                         principalColumn: "Id",
@@ -354,44 +314,24 @@ namespace F1_Web_App.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CircuitSeasons_CircuitId",
-                table: "CircuitSeasons",
-                column: "CircuitId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Drivers_CountryId",
-                table: "Drivers",
+                name: "IX_Circuits_CountryId",
+                table: "Circuits",
                 column: "CountryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DriverSeasons_ContractedTeamId",
-                table: "DriverSeasons",
-                column: "ContractedTeamId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DriverSeasons_DriverId",
-                table: "DriverSeasons",
-                column: "DriverId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Participations_CircuitSeasonId",
-                table: "Participations",
-                column: "CircuitSeasonId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Participations_DriverId",
-                table: "Participations",
-                column: "DriverId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Participations_DriverSeasonId",
-                table: "Participations",
-                column: "DriverSeasonId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Participations_TeamId",
-                table: "Participations",
+                name: "IX_Drivers_TeamId",
+                table: "Drivers",
                 column: "TeamId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Events_CircuitId",
+                table: "Events",
+                column: "CircuitId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Result_CircuitId",
+                table: "Result",
+                column: "CircuitId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Teams_CountryId",
@@ -418,7 +358,13 @@ namespace F1_Web_App.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Participations");
+                name: "Drivers");
+
+            migrationBuilder.DropTable(
+                name: "Events");
+
+            migrationBuilder.DropTable(
+                name: "Result");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -427,19 +373,10 @@ namespace F1_Web_App.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "CircuitSeasons");
-
-            migrationBuilder.DropTable(
-                name: "DriverSeasons");
+                name: "Teams");
 
             migrationBuilder.DropTable(
                 name: "Circuits");
-
-            migrationBuilder.DropTable(
-                name: "Drivers");
-
-            migrationBuilder.DropTable(
-                name: "Teams");
 
             migrationBuilder.DropTable(
                 name: "Countries");
