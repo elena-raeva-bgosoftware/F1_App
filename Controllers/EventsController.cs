@@ -26,7 +26,6 @@ namespace F1_Web_App.Controllers
                     EventDate = p.EventDate,
                     ImageUrl = p.Circuit.ImageUrl
                 })
-                .Distinct()
                 .ToListAsync();
 
             return View(model);

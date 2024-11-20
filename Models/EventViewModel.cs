@@ -1,10 +1,21 @@
 ﻿using F1_Web_App.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
-public class EventViewModel
+namespace F1_Web_App.Models
 {
-    public int Id { get; set; }
-    public string CircuitName { get; set; } = null!;
-    public string Country { get; set; } = null!;
-    public DateTime EventDate { get; set; }
-    public string ImageUrl { get; set; } = null!;
+    public class EventViewModel
+    {
+        public int Id { get; set; }
+
+        [Required]
+        public string CircuitName { get; set; } = null!;
+
+        [Required]
+        public string Country { get; set; } = null!;
+
+        [Required]
+        public DateTime EventDate { get; set; }
+
+        public string ImageUrl { get; set; } = null!;
+    }
 }
