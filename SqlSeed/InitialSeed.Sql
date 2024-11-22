@@ -388,8 +388,6 @@ INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (74, 0, 20
 GO
 INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (75, 0, 9, 4)
 GO
-INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (76, 0, 17, 21, 4)
-GO
 INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (77, 0, 17, 4)
 GO
 INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (78, 0, 19, 4)
@@ -435,6 +433,604 @@ GO
 INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (98, 0, 15, 5)
 GO
 INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (99, 0, 26, 5)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (100, 25, 8, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (101, 18, 6, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (102, 15, 10, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (103, 12, 12, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (104, 10, 24, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (105, 8, 11, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (106, 6, 25, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (107, 4, 27, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (108, 2, 22, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (109, 1, 18, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (110, 0, 16, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (111, 0, 14, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (112, 0, 20, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (113, 0, 9, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (114, 0, 17, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (115, 0, 13, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (116, 0, 19, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (117, 0, 26, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (118, 0, 15, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (119, 0, 21, 6)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (120, 25, 6, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (121, 18, 8, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (122, 15, 12, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (123, 12, 27, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (124, 10, 24, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (125, 8, 22, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (126, 7, 25, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (127, 4, 10, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (128, 2, 13, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (129, 1, 15, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (130, 0, 18, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (131, 0, 14, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (132, 0, 19, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (133, 0, 20, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (134, 0, 17, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (135, 0, 9, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (136, 0, 21, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (137, 0, 26, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (138, 0, 11, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (139, 0, 16, 7)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (140, 25, 12, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (141, 18, 27, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (142, 15, 24, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (143, 12, 8, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (144, 10, 25, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (145, 8, 6, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (146, 7, 22, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (147, 4, 15, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (148, 2, 16, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (149, 1, 9, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (150, 0, 11, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (151, 0, 19, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (152, 0, 26, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (153, 0, 13, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (154, 0, 21, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (155, 0, 17, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (156, 0, 20, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (157, 0, 10, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (158, 0, 18, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (159, 0, 14, 8)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (160, 25, 6, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (161, 18, 8, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (162, 15, 25, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (163, 13, 22, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (164, 10, 27, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (165, 8, 11, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (166, 6, 13, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (167, 4, 19, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (168, 2, 9, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (169, 1, 20, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (170, 0, 18, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (171, 0, 14, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (172, 0, 26, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (173, 0, 15, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (174, 0, 17, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (175, 0, 24, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (176, 0, 16, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (177, 0, 10, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (178, 0, 12, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (179, 0, 21, 9)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (180, 25, 6, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (181, 19, 8, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (182, 15, 22, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (183, 12, 25, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (184, 10, 12, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (185, 8, 24, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (186, 6, 27, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (187, 4, 10, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (188, 2, 9, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (189, 1, 20, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (190, 0, 18, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (191, 0, 11, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (192, 0, 17, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (193, 0, 13, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (194, 0, 19, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (195, 0, 26, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (196, 0, 14, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (197, 0, 16, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (198, 0, 15, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (199, 0, 21, 10)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (200, 25, 25, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (201, 18, 27, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (202, 15, 24, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (203, 12, 22, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (204, 10, 6, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (205, 8, 18, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (206, 6, 10, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (207, 4, 14, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (208, 2, 19, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (209, 1, 9, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (210, 0, 12, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (211, 0, 20, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (212, 0, 13, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (213, 0, 15, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (214, 0, 16, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (215, 0, 26, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (216, 0, 17, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (217, 0, 11, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (218, 0, 21, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (219, 0, 8, 11)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (240, 25, 27, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (241, 18, 8, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (242, 15, 22, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (243, 12, 12, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (244, 10, 6, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (245, 8, 24, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (246, 6, 10, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (247, 5, 25, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (248, 2, 15, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (249, 1, 13, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (250, 0, 11, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (251, 0, 19, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (252, 0, 18, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (253, 0, 16, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (254, 0, 14, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (255, 0, 26, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (256, 0, 21, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (257, 0, 20, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (258, 0, 17, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (259, 0, 9, 12)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (260, 25, 22, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (261, 18, 27, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (262, 15, 12, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (263, 12, 6, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (264, 10, 8, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (265, 8, 24, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (266, 7, 10, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (267, 4, 11, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (268, 2, 20, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (269, 1, 19, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (270, 0, 13, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (271, 0, 16, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (272, 0, 9, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (273, 0, 14, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (274, 0, 26, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (275, 0, 15, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (276, 0, 21, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (277, 0, 18, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (278, 0, 17, 13)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (280, 26, 8, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (281, 18, 6, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (282, 15, 12, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (283, 12, 27, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (284, 10, 24, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (285, 8, 10, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (286, 6, 25, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (287, 4, 22, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (288, 2, 9, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (289, 1, 11, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (290, 0, 18, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (291, 0, 19, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (292, 0, 13, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (293, 0, 16, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (294, 0, 20, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (295, 0, 21, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (296, 0, 15, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (297, 0, 14, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (298, 0, 26, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (299, 0, 17, 14)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (300, 25, 12, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (301, 18, 27, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (302, 16, 8, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (303, 12, 24, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (304, 10, 22, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (305, 8, 6, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (306, 6, 25, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (307, 4, 10, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (308, 2, 16, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (309, 1, 14, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (310, 0, 11, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (311, 0, 21, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (312, 0, 19, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (313, 0, 20, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (314, 0, 9, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (315, 0, 26, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (316, 0, 18, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (317, 0, 17, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (318, 0, 13, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (319, 0, 15, 15)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (320, 25, 27, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (321, 18, 12, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (322, 15, 25, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (323, 13, 8, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (324, 10, 6, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (325, 8, 11, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (326, 6, 16, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (327, 4, 21, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (328, 2, 22, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (329, 1, 10, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (330, 0, 18, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (331, 0, 9, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (332, 0, 19, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (333, 0, 17, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (334, 0, 20, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (335, 0, 26, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (336, 0, 10, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (337, 0, 24, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (338, 0, 13, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (339, 0, 15, 16)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (340, 25, 8, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (341, 18, 6, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (342, 15, 27, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (343, 12, 25, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (344, 10, 12, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (345, 8, 22, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (346, 6, 24, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (347, 4, 11, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (348, 2, 18, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (349, 1, 10, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (350, 0, 21, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (351, 0, 15, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (352, 0, 20, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (353, 0, 13, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (354, 0, 17, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (355, 0, 26, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (356, 0, 9, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (357, 0, 19, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (358, 0, 14, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (359, 0, 16, 17)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (360, 25, 12, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (361, 18, 24, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (362, 15, 6, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (363, 12, 8, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (364, 10, 27, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (365, 8, 25, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (366, 6, 10, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (367, 4, 18, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (368, 2, 19, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (369, 1, 21, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (370, 0, 14, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (371, 0, 9, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (372, 0, 11, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (373, 0, 15, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (374, 0, 13, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (375, 0, 16, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (376, 0, 26, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (377, 0, 20, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (378, 0, 17, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (379, 0, 22, 18)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (380, 25, 24, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (381, 18, 8, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (382, 16, 12, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (383, 12, 22, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (384, 10, 25, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (385, 8, 6, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (386, 6, 14, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (387, 4, 27, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (388, 2, 18, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (389, 1, 9, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (390, 0, 13, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (391, 0, 21, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (392, 0, 20, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (393, 0, 26, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (394, 0, 17, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (395, 0, 19, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (396, 0, 10, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (397, 0, 11, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (398, 0, 16, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (399, 0, 15, 19)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (400, 26, 6, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (401, 18, 20, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (402, 15, 9, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (403, 12, 25, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (404, 10, 12, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (405, 8, 8, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (406, 6, 15, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (407, 4, 27, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (408, 2, 19, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (409, 1, 22, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (410, 0, 10, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (411, 0, 14, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (412, 0, 26, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (413, 0, 11, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (414, 0, 17, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (415, 0, 24, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (416, 0, 21, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (417, 0, 16, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (418, 0, 13, 20)
+GO
+INSERT [dbo].[Results] ([Id], [Points], [DriverId], [EventId]) VALUES (419, 0, 18, 20)
 GO
 SET IDENTITY_INSERT [dbo].[Results] OFF
 GO
