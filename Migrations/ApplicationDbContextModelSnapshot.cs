@@ -151,7 +151,7 @@ namespace F1_Web_App.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("Result");
+                    b.ToTable("Results");
                 });
 
             modelBuilder.Entity("F1_Web_App.Data.Models.Team", b =>

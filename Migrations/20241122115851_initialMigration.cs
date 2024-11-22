@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace F1_Web_App.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class initialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -233,25 +233,6 @@ namespace F1_Web_App.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Result",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RaceId = table.Column<int>(type: "int", nullable: false),
-                    CircuitId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Result", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Result_Circuits_CircuitId",
-                        column: x => x.CircuitId,
-                        principalTable: "Circuits",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Drivers",
                 columns: table => new
                 {
@@ -272,6 +253,34 @@ namespace F1_Web_App.Migrations
                         principalTable: "Teams",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Results",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Points = table.Column<int>(type: "int", nullable: false),
+                    DriverId = table.Column<int>(type: "int", nullable: false),
+                    EventId = table.Column<int>(type: "int", nullable: false),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Results", x => x.Id);
+                    
+                    table.ForeignKey(
+                        name: "FK_Results_Drivers_DriverId",
+                        column: x => x.DriverId,
+                        principalTable: "Drivers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Results_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(
@@ -329,9 +338,14 @@ namespace F1_Web_App.Migrations
                 column: "CircuitId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Result_CircuitId",
-                table: "Result",
-                column: "CircuitId");
+                name: "IX_Results_DriverId",
+                table: "Results",
+                column: "DriverId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Results_EventId",
+                table: "Results",
+                column: "EventId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Teams_CountryId",
@@ -358,19 +372,19 @@ namespace F1_Web_App.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Drivers");
-
-            migrationBuilder.DropTable(
-                name: "Events");
-
-            migrationBuilder.DropTable(
-                name: "Result");
+                name: "Results");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Drivers");
+
+            migrationBuilder.DropTable(
+                name: "Events");
 
             migrationBuilder.DropTable(
                 name: "Teams");

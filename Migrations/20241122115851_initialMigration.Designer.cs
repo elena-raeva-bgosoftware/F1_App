@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace F1_Web_App.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241120075411_AddUpdatedResult")]
-    partial class AddUpdatedResult
+    [Migration("20241122115851_initialMigration")]
+    partial class initialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -154,7 +154,7 @@ namespace F1_Web_App.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("Result");
+                    b.ToTable("Results");
                 });
 
             modelBuilder.Entity("F1_Web_App.Data.Models.Team", b =>
