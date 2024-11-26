@@ -8,13 +8,13 @@
 </div>
 <hr />
 
-@foreach (var Circuit in Model)
+@foreach (var Event in Model)
 {
     <div class="row align-items-center mb-4 py-3" style="border-bottom: 1px solid #ccc;">
         <div class="col-md-2 text-center">
-            @if (!string.IsNullOrEmpty(Circuit.ImageUrl))
+            @if (!string.IsNullOrEmpty(Event.ImageUrl))
             {
-                <img src="@Circuit.ImageUrl" class="img-fluid" style="max-height: 100px; object-fit: contain;" alt="@Circuit.CircuitName" />
+                <img src="@Event.ImageUrl" class="img-fluid" style="max-height: 100px; object-fit: contain;" alt="@Event.CircuitName" />
             }
             else
             {
@@ -22,10 +22,16 @@
             }
         </div>
         <div class="col-md-4 text-start">
-            <h5 class="mb-0">@Circuit.CircuitName</h5>
+            <h5 class="mb-0">@Event.CircuitName</h5>
         </div>
         <div class="col-md-4 text-start">
-            <h5 class="mb-0">@Circuit.EventDate</h5>
+            <h5 class="mb-0">@Event.EventDate</h5>
         </div>
+        <div class="col-md-2 text-end">
+            <a href="@Url.Action("List", "Results", new { id = Event.Id })" class="btn btn-primary">Details</a>
+        </div>
+       
     </div>
 }
+
+

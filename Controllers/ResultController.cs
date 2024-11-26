@@ -3,7 +3,8 @@ using F1_Web_App.Data.Models;
 using F1_Web_App.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace F1_Web_App.Controllers
 {
@@ -15,22 +16,34 @@ namespace F1_Web_App.Controllers
         {
             _context = context;
         }
+
+        [Route("Results/List/{EventId}")]
         public async Task<IActionResult> IndexAsync(int EventId)
         {
-            var model = await _context.Results
-                .Where(r => r.EventId == EventId)
-                .Select(r => new ResultViewModel
+            var data = _context.Events
+                .Include(e => e.Circuit)
+                .Include(e => e.Results)
+                .ThenInclude(r => r.Driver)
+                .Where(e => e.Id == EventId)
+                .FirstOrDefault();
+            var model = new ResultListViewModel
+            {
+                CircuitName = data.Circuit.Name,
+                EventDate = data.EventDate,
+                Results = data.Results.Select(r => new ResultViewModel
                 {
                     Id = r.Id,
                     DriverName = r.Driver.Name,
                     DriverNumber = r.Driver.DriverNumber,
                     TeamName = r.Driver.Team.Name,
-                    Points = r.Points
-                })
-                
-                .FirstOrDefaultAsync();
+                    Points = r.Points,
+                    EventName = r.Event.Circuit.Name,
+                    EventDate = r.Event.EventDate
+                }).ToList()
+            };
+            
 
-            return View(model);
+            return View("/Views/Results/List.cshtml", model); 
         }
     }
 }
