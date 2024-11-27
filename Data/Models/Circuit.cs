@@ -16,6 +16,6 @@ namespace F1_Web_App.Data.Models
 
         public bool IsLegacy { get; set; }
 
-        public ICollection<Result> Results { get; set; } = new List<Result>();
+ 
     }
 }

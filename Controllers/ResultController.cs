@@ -20,30 +20,43 @@ namespace F1_Web_App.Controllers
         [Route("Results/List/{EventId}")]
         public async Task<IActionResult> IndexAsync(int EventId)
         {
-            var data = _context.Events
+            try
+            {
+                var data = _context.Events
                 .Include(e => e.Circuit)
                 .Include(e => e.Results)
                 .ThenInclude(r => r.Driver)
+                .ThenInclude(d => d.Team)
                 .Where(e => e.Id == EventId)
                 .FirstOrDefault();
-            var model = new ResultListViewModel
-            {
-                CircuitName = data.Circuit.Name,
-                EventDate = data.EventDate,
-                Results = data.Results.Select(r => new ResultViewModel
+                var model = new ResultListViewModel
                 {
-                    Id = r.Id,
-                    DriverName = r.Driver.Name,
-                    DriverNumber = r.Driver.DriverNumber,
-                    TeamName = r.Driver.Team.Name,
-                    Points = r.Points,
-                    EventName = r.Event.Circuit.Name,
-                    EventDate = r.Event.EventDate
-                }).ToList()
-            };
-            
+                    CircuitName = data.Circuit.Name,
+                    EventDate = data.EventDate,
+                    Results = 
+                    data.Results.Select(r => new ResultViewModel
+                    {
+                        Id = r.Id,
+                        DriverName = r.Driver.Name,
+                        DriverNumber = r.Driver.DriverNumber,
+                        TeamName = r.Driver.Team.Name,
+                        Points = r.Points,
 
-            return View("/Views/Results/List.cshtml", model); 
+                    }).OrderByDescending(r => r.Points)
+                    .ThenBy(r => r.DriverName)
+                    .ToList()
+                    
+                };
+
+
+                return View("/Views/Results/List.cshtml", model);
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+            
         }
     }
 }
