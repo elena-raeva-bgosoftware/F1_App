@@ -44,5 +44,46 @@ namespace F1_Web_App.Controllers
 
             return View(standings); 
         }
+        public IActionResult ListTeamStandings()
+        {
+            var currentYear = DateTime.Now.Year;
+
+            var teamStandings = _context.Teams
+                .Join(
+                    _context.Drivers,
+                    team => team.Id,
+                    driver => driver.TeamId,
+                    (team, driver) => new
+                    {
+                        team.Name, 
+                        driver.Id  
+                    }
+                )
+                .Join(
+                    _context.Results,
+                    teamDriver => teamDriver.Id,
+                    result => result.DriverId,
+                    (teamDriver, result) => new
+                    {
+                        teamDriver.Name, 
+                        result.Points,   
+                        result.Event.EventDate 
+                    }
+                )
+                .Where(x => x.EventDate.Year == currentYear) 
+                .GroupBy(x => x.Name) 
+                .Select(group => new StandingsViewModel
+                {
+                    TeamName = group.Key, 
+                    TotalTeamPoints = group.Sum(g => g.Points), 
+                    DriverNumber = 0, 
+                    DriverName = "",
+                    TotalPoints = 0
+                })
+                .OrderByDescending(x => x.TotalTeamPoints) 
+                .ToList();
+
+            return View("ListTeamStandings", teamStandings);
+        }
     }
 }

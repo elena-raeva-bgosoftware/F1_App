@@ -5,5 +5,8 @@
         public int DriverNumber { get; set; }
         public string DriverName { get; set; }
         public int TotalPoints { get; set; }
+
+        public string TeamName { get; set; }
+        public int TotalTeamPoints { get; set; }
     }
 }
