@@ -1,5 +1,5 @@
 ﻿using F1_Web_App.Data; 
-using F1_Web_App.Models; // Пространството от имена за StandingsViewModel
+using F1_Web_App.Models; 
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
