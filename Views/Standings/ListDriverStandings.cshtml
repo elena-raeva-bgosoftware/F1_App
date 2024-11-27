@@ -1,0 +1,29 @@
+﻿@model IEnumerable<F1_Web_App.Models.StandingsViewModel>
+
+
+<h1>Driver Standings</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Driver Number</th>
+            <th>Driver Name</th>
+            <th>Total Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int position = 1;
+            foreach (var driver in Model)
+            {
+                <tr>
+                    <td>@position</td>
+                    <td>@driver.DriverNumber</td>
+                    <td>@driver.DriverName</td>
+                    <td>@driver.TotalPoints</td>
+                </tr>
+                position++;
+            }
+        }
+    </tbody>
+</table>
