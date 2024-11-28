@@ -36,7 +36,12 @@ namespace F1_Web_App.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var model = _context.Drivers
+            if (!User.IsInRole("Administrator"))
+            {
+                return Unauthorized();
+            }
+
+            var model = await _context.Drivers
                 .Where(p => p.Id == id)
                 .Select(p => new DriverEditViewModel
                 {
@@ -50,9 +55,16 @@ namespace F1_Web_App.Controllers
                             TeamName = t.Name
                         })
                         .ToList()
-                });
+                })
+                .FirstOrDefaultAsync();
+
+            if (model == null)
+            {
+                return NotFound();
+            }
 
             return View(model);
+
         }
 
         //[Authorize]

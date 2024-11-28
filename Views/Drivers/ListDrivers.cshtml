@@ -1,39 +1,39 @@
-﻿@model IEnumerable<F1_Web_App.Models.DriverListViewModel>
+﻿@model IEnumerable<DriverListViewModel>
 
 @{
-    ViewData["Title"] = "Drivers";
+    ViewData["Title"] = "List of Drivers";
 }
 
-<div class="d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
-    <h2>@ViewData["Title"]</h2>
-</div>
-<hr />
+<h2>List of Drivers</h2>
 
-@foreach (var driver in Model)
-{
-    <div class="row align-items-center mb-4 py-3" style="border-bottom: 1px solid #ccc;">
-        <div class="col-md-2 text-center">
-            @if (!string.IsNullOrEmpty(driver.ImageUrl))
-            {
-                <img src="@driver.ImageUrl" class="img-fluid" style="max-height: 100px; object-fit: contain;" alt="@driver.Name" />
-            }
-            else
-            {
-                <img src="~/img/no-image-available-02.jpg" class="img-fluid" style="max-height: 100px; object-fit: contain;" alt="No Image Available" />
-            }
-        </div>
-        <div class="col-md-4 text-start">
-            <h5 class="mb-0">@driver.Name</h5>
-        </div>
-        <div class="col-md-2 text-center">
-            <h5 class="mb-0">#@driver.DriverNumber</h5>
-        </div>
-        <div class="col-md-4 text-end">
-            <h5 class="mb-0">@driver.TeamName</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Driver Number</th>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Image</th>
             @if (User.IsInRole("Administrator"))
             {
-                <a asp-action="Edit" asp-route-id="@driver.Id" class="btn btn-primary btn-sm">Edit</a>
+                <th>Edit</th>
             }
-        </div>
-    </div>
-}
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var driver in Model)
+        {
+            <tr>
+                <td>@driver.DriverNumber</td>
+                <td>@driver.Name</td>
+                <td>@driver.TeamName</td>
+                <td><img src="@driver.ImageUrl" alt="@driver.Name" width="100" /></td>
+                @if (User.IsInRole("Administrator"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@driver.Id" class="btn btn-primary">Edit</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
