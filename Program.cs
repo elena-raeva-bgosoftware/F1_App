@@ -6,11 +6,9 @@ namespace F1_Web_App
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -25,6 +23,7 @@ namespace F1_Web_App
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
             })
+                 .AddRoles<IdentityRole>()
                  .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
@@ -42,6 +41,14 @@ namespace F1_Web_App
                 app.UseHsts();
             }
 
+            // Seed roles and assign them to users
+            using (var scope = app.Services.CreateScope())
+            {
+                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+                await SeedRolesAndAssignToUsersAsync(roleManager, userManager);
+            }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -54,7 +61,35 @@ namespace F1_Web_App
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
-            app.Run();
+            await app.RunAsync();
+        }
+
+        private static async Task SeedRolesAndAssignToUsersAsync(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager)
+        {
+            var roles = new[] { "Administrator", "Moderator", "User" };
+
+            foreach (var role in roles)
+            {
+                if (!await roleManager.RoleExistsAsync(role))
+                {
+                    await roleManager.CreateAsync(new IdentityRole(role));
+                }
+            }
+
+            var users = new[]
+            {
+                new { UserId = "0804f098-3e4a-47a9-b6ea-8e5d7370ba92", Role = "Administrator" },
+                new { UserId = "770ef33f-78ce-43aa-9dbb-7b454c754452", Role = "Moderator" }
+            };
+
+            foreach (var userRole in users)
+            {
+                var user = await userManager.FindByIdAsync(userRole.UserId);
+                if (user != null && !await userManager.IsInRoleAsync(user, userRole.Role))
+                {
+                    await userManager.AddToRoleAsync(user, userRole.Role);
+                }
+            }
         }
     }
 }

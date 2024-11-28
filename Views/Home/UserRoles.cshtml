@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "User Roles";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<ul>
+    @foreach (var role in Model)
+    {
+        <li>@role</li>
+    }
+</ul>
