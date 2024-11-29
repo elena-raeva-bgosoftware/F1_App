@@ -1,0 +1,43 @@
+﻿@model F1_Web_App.Models.DriverEditViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+<hr />
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form asp-action="Edit" method="post">
+            <div class="mb-3">
+                <label asp-for="DriverName" class="form-label-add-edit">Driver Name</label>
+                <input asp-for="DriverName" class="form-control" aria-required="true" />
+                <span asp-validation-for="DriverName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DriverNumber" class="form-label-add-edit">Driver Number</label>
+                <input asp-for="DriverNumber" class="form-control" aria-required="true" />
+                <span asp-validation-for="DriverNumber" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ImageUrl" class="form-label-add-edit">Image URL</label>
+                <input asp-for="ImageUrl" class="form-control" aria-required="false" placeholder="Enter image URL (optional)" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="TeamId" class="form-label-add-edit">Select Team</label>
+                <select asp-for="TeamId" class="form-control" aria-required="true" asp-items="@(new SelectList(Model.Teams, "TeamId", "TeamName"))">
+                    <option value="">Select Team...</option>
+                </select>
+                <span asp-validation-for="TeamId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-warning btn-dark-text mb-2 w-100 py-3 fw-bold rounded" type="submit" value="Confirm" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

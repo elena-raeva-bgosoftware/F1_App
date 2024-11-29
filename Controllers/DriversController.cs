@@ -46,12 +46,14 @@ namespace F1_Web_App.Controllers
                 .Select(p => new DriverEditViewModel
                 {
                     Id = p.Id,
+                    DriverName = p.Name,
                     DriverNumber = p.DriverNumber,
                     TeamId = p.TeamId,
                     ImageUrl = p.ImageUrl,
                     Teams = _context.Teams
                         .Select(t => new TeamListViewModel
                         {
+                            TeamId = t.Id,
                             TeamName = t.Name
                         })
                         .ToList()
@@ -63,40 +65,57 @@ namespace F1_Web_App.Controllers
                 return NotFound();
             }
 
+            if (model.Teams == null)
+            {
+                model.Teams = new List<TeamListViewModel>();
+            }
+
             return View(model);
 
         }
 
-        //[Authorize]
-        //[HttpPost]
-        //public async Task<IActionResult> Edit(DriverEditViewModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        model.Categories = await context.Categories
-        //         .Select(c => new CategoryViewModel
-        //         {
-        //             Id = c.Id,
-        //             Name = c.Name
-        //         })
-        //         .ToListAsync();
-        //        return View(model);
-        //    }
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, DriverEditViewModel model)
+        {
+            if (!User.IsInRole("Administrator"))
+            {
+                return Unauthorized();
+            }
 
-        //    string userId = GetUserId();
-        //    var entity = context.Products
-        //        .Where(p => p.Id == model.Id)
-        //       .FirstOrDefault();
+            if (!ModelState.IsValid)
+            {
+                model.Teams = _context.Teams
+                    .Select(t => new TeamListViewModel
+                    {
+                        TeamId = t.Id,
+                        TeamName = t.Name
+                    })
+                    .ToList();
 
-        //    entity.ProductName = model.ProductName;
-        //    entity.Description = model.Description;
-        //    entity.Price = model.Price;
-        //    entity.ImageUrl = model.ImageUrl;
-        //    entity.CategoryId = model.CategoryId;
-        //    entity.AddedOn = DateTime.Parse(model.AddedOn);
-        //    context.SaveChanges();
-        //    return RedirectToAction("Details", new { id = model.Id });
+                if (model.Teams == null)
+                {
+                    model.Teams = new List<TeamListViewModel>();
+                }
+                return View(model);
+            }
 
-        //}
+            var driver = await _context.Drivers.FindAsync(id);
+
+            if (driver == null)
+            {
+                return BadRequest();
+            }
+
+            driver.Name = model.DriverName;
+            driver.DriverNumber = model.DriverNumber;
+            driver.TeamId = model.TeamId;
+            driver.ImageUrl = model.ImageUrl;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(ListDrivers));
+
+        }
     }
 }
