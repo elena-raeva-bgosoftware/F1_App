@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using F1_Web_App.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace F1_Web_App.Models
 {
@@ -13,5 +14,7 @@ namespace F1_Web_App.Models
         public string TeamName { get; set; } = string.Empty;
 
         public string ImageUrl { get; set; } = string.Empty;
+
+        public bool IsRetired { get; set; }
     }
 }

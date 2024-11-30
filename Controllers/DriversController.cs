@@ -227,5 +227,35 @@ namespace F1_Web_App.Controllers
 
             return RedirectToAction("ListDrivers");
         }
+
+
+        [Authorize(Roles = "Administrator, Moderator")]
+        [HttpPost]
+        public async Task<IActionResult> ToggleDriverStatus(int id)
+        {
+            var driver = await _context.Drivers.FindAsync(id);
+            if (driver == null)
+            {
+                return NotFound();
+            }
+
+            driver.IsRetired = !driver.IsRetired;
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = $"Driver status updated to {(driver.IsRetired ? "Retired" : "Active")}.";
+
+            var drivers = await _context.Drivers.ToListAsync();
+            var driverListViewModels = drivers.Select(d => new DriverListViewModel
+            {
+                Id = d.Id,
+                DriverNumber = d.DriverNumber,
+                Name = d.Name,
+                TeamName = d.Team?.Name,
+                ImageUrl = d.ImageUrl,
+                IsRetired = d.IsRetired
+            }).ToList();
+
+            return View("ListDrivers", driverListViewModels);
+        }
     }
 }
