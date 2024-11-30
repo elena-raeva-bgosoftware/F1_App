@@ -176,5 +176,56 @@ namespace F1_Web_App.Controllers
 
             return RedirectToAction(nameof(ListDrivers));
         }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult ConfirmDeleteDriver(int id)
+        {
+            if (!User.IsInRole("Administrator"))
+            {
+                return Unauthorized();
+            }
+
+            var driver = _context.Drivers
+                .Select(d => new DriverListViewModel
+                {
+                    Id = d.Id,
+                    DriverNumber = d.DriverNumber,
+                    Name = d.Name,
+                    TeamName = d.Team.Name,
+                    ImageUrl = d.ImageUrl
+                })
+                .FirstOrDefault(d => d.Id == id);
+
+            if (driver == null)
+            {
+                return NotFound();
+            }
+
+            return View(driver);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult DeleteDriver(int id)
+        {
+            if (!User.IsInRole("Administrator"))
+            {
+                return Unauthorized();
+            }
+
+            var driver = _context.Drivers.Find(id);
+            if (driver == null)
+            {
+                return NotFound();
+            }
+
+            _context.Drivers.Remove(driver);
+            _context.SaveChanges();
+
+            TempData["SuccessMessage"] = "Driver deleted successfully.";
+
+            return RedirectToAction("ListDrivers");
+        }
     }
 }
