@@ -117,5 +117,64 @@ namespace F1_Web_App.Controllers
             return RedirectToAction(nameof(ListDrivers));
 
         }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult CreateDriver()
+        {
+            if (!User.IsInRole("Administrator"))
+            {
+                return Unauthorized();
+            }
+
+            var model = new DriverEditViewModel
+            {
+                Teams = _context.Teams
+                    .Select(t => new TeamListViewModel
+                    {
+                        TeamId = t.Id,
+                        TeamName = t.Name
+                    })
+                    .ToList()
+            };
+
+            return View("CreateDriver", model); 
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> CreateDriver(DriverEditViewModel model)
+        {
+            if (!User.IsInRole("Administrator"))
+            {
+                return Unauthorized();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                model.Teams = _context.Teams
+                    .Select(t => new TeamListViewModel
+                    {
+                        TeamId = t.Id,
+                        TeamName = t.Name
+                    })
+                    .ToList();
+
+                return View(model);
+            }
+
+            var driver = new Driver
+            {
+                Name = model.DriverName,
+                DriverNumber = model.DriverNumber,
+                TeamId = model.TeamId,
+                ImageUrl = model.ImageUrl
+            };
+
+            _context.Drivers.Add(driver);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(ListDrivers));
+        }
     }
 }
