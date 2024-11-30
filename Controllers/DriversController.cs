@@ -257,5 +257,29 @@ namespace F1_Web_App.Controllers
 
             return View("ListDrivers", driverListViewModels);
         }
+
+
+        [Authorize(Roles = "Administrator, Moderator")]
+        public async Task<IActionResult> StatusActiveOrAllDrivers(bool showActiveOnly = false)
+        {
+            var drivers = await _context.Drivers.ToListAsync();
+            if (showActiveOnly)
+            {
+                drivers = drivers.Where(d => !d.IsRetired).ToList();
+            }
+
+            var driverListViewModels = drivers.Select(d => new DriverListViewModel
+            {
+                Id = d.Id,
+                DriverNumber = d.DriverNumber,
+                Name = d.Name,
+                TeamName = d.Team?.Name,
+                ImageUrl = d.ImageUrl,
+                IsRetired = d.IsRetired
+            }).ToList();
+
+            ViewBag.ShowActiveOnly = showActiveOnly;
+            return View(driverListViewModels);
+        }
     }
 }
