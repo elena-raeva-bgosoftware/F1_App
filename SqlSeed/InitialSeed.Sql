@@ -62,6 +62,10 @@ INSERT [dbo].[Countries] ([Id], [Name]) VALUES (29, N'Brazil')
 GO
 INSERT [dbo].[Countries] ([Id], [Name]) VALUES (30, N'UAE')
 GO
+INSERT [dbo].[Countries] ([Id], [Name]) VALUES (31, N'Bulgaria')
+GO
+INSERT [dbo].[Countries] ([Id], [Name]) VALUES (32, N'Russia')
+GO
 SET IDENTITY_INSERT [dbo].[Countries] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Circuits] ON 
@@ -233,6 +237,8 @@ GO
 INSERT [dbo].[Drivers] ([Id], [DriverNumber], [Name], [TeamId], [ImageUrl], [IsRetired]) VALUES (26, 77, N'Valtteri Bottas', 11, N'https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/bottas', 0)
 GO
 INSERT [dbo].[Drivers] ([Id], [DriverNumber], [Name], [TeamId], [ImageUrl], [IsRetired]) VALUES (27, 81, N'Oscar Piastri', 5, N'https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2024Drivers/piastri', 0)
+GO
+INSERT [dbo].[Drivers] ([Id], [DriverNumber], [Name], [TeamId], [ImageUrl], [IsRetired]) VALUES (29, 3, N'Michael Schumacher', 4, N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgL0a4VSKJI2PhRLVTG0SXBHPusyBTr5GNaw&s', 1)
 GO
 SET IDENTITY_INSERT [dbo].[Drivers] OFF
 GO

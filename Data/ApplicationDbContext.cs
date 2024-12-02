@@ -23,6 +23,11 @@ namespace F1_Web_App.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Country>().HasData(
+                 
+                 new Country { Id = 31, Name = "Bulgaria" },
+                 new Country { Id = 32, Name = "Russia" }
+             );
         }
     }
 }

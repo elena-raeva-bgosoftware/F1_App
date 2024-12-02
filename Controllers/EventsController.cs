@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using F1_Web_App.Data;
 using F1_Web_App.Data.Models;
 using F1_Web_App.Models;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace F1_Web_App.Controllers
 {
@@ -15,9 +18,16 @@ namespace F1_Web_App.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(int? year)
         {
-            var model = await _context.Events
+            var eventsQuery = _context.Events.AsQueryable();
+
+            if (year.HasValue)
+            {
+                eventsQuery = eventsQuery.Where(e => e.EventDate.Year == year.Value);
+            }
+
+            var model = await eventsQuery
                 .Select(p => new EventViewModel
                 {
                     Id = p.Id,
@@ -28,8 +38,15 @@ namespace F1_Web_App.Controllers
                 })
                 .ToListAsync();
 
+            var years = await _context.Events
+                .Select(e => e.EventDate.Year)
+                .Distinct()
+                .OrderBy(y => y)
+                .ToListAsync();
+
+            ViewBag.Years = new SelectList(years);
+
             return View(model);
         }
-
     }
 }

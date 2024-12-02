@@ -5,6 +5,11 @@
 
 <div class="d-flex justify-content-between align-items-center mb-3" style="margin-top: 20px;">
     <h2>@ViewData["Title"]</h2>
+    <form method="get" asp-action="List">
+        <select name="year" asp-items="ViewBag.Years" onchange="this.form.submit()" class="form-select">
+            <option value="">All Years</option>
+        </select>
+    </form>
 </div>
 <hr />
 
@@ -25,13 +30,10 @@
             <h5 class="mb-0">@Event.CircuitName</h5>
         </div>
         <div class="col-md-4 text-start">
-            <h5 class="mb-0">@Event.EventDate</h5>
+            <h5 class="mb-0">@Event.EventDate.ToShortDateString()</h5>
         </div>
         <div class="col-md-2 text-end">
             <a href="@Url.Action("List", "Results", new { id = Event.Id })" class="btn btn-primary">Details</a>
         </div>
-       
     </div>
 }
-
-
