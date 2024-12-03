@@ -1,4 +1,7 @@
-﻿@model IEnumerable<EventViewModel>
+﻿@model IPagedList<F1_Web_App.Models.EventViewModel>
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+
 @{
     ViewData["Title"] = "Events";
     var selectedYear = ViewBag.SelectedYear as int?;
@@ -49,3 +52,7 @@
         </div>
     </div>
 }
+
+<div>
+    @Html.PagedListPager(Model, page => Url.Action("List", new { page, year = selectedYear }))
+</div>
