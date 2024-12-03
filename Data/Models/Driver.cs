@@ -17,17 +17,19 @@ namespace F1_Web_App.Data.Models
         [MaxLength(ValidationConstants.DriverNameMaxLength)]
         public string Name { get; set; } = null!;
 
+
+        [Range(1, int.MaxValue, ErrorMessage = "TeamId must be a positive number.")]
         public int TeamId { get; set; }
 
         [Required]
-        public  Team Team { get; set; } = null!;
+        public Team Team { get; set; } = null!;
 
+        [Required]
         public string ImageUrl { get; set; } = null!;
 
         [Required]
         public bool IsRetired { get; set; }
 
-        public ICollection<Result> Results { get; set; }
-
+        public ICollection<Result> Results { get; set; } = new List<Result>();
     }
 }

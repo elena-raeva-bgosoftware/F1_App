@@ -7,6 +7,7 @@ namespace F1_Web_App.Data.Models
     {
         public int Id { get; set; }
 
+        [Required]
         [MaxLength(ValidationConstants.CountryNameMaxLength)]
         public string Name { get; set; } = null!;
     }

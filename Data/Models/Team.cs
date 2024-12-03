@@ -1,5 +1,4 @@
 ﻿using F1_Web_App.Common;
-using F1_Web_App.Data.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace F1_Web_App.Data.Models
@@ -12,11 +11,14 @@ namespace F1_Web_App.Data.Models
         [Required]
         [MaxLength(ValidationConstants.DriverTeamNameMaxLength)]
         public string Name { get; set; } = null!;
-        [Required]
+
+        [Range(1, int.MaxValue, ErrorMessage = "CountryId must be a positive number.")]
         public int CountryId { get; set; }
 
         public Country Country { get; set; } = null!;
 
+        [Required]
+        [Url]
         public string ImageUrl { get; set; } = null!;
 
         public ICollection<Driver> Drivers { get; set; } = new List<Driver>();
