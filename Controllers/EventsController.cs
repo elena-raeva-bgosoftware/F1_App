@@ -44,9 +44,14 @@ namespace F1_Web_App.Controllers
                 .OrderBy(y => y)
                 .ToListAsync();
 
-            ViewBag.Years = new SelectList(years);
+            ViewBag.Years = years;
+            ViewBag.SelectedYear = year;
 
             return View(model);
         }
+
+
+
+
     }
 }
