@@ -1,4 +1,4 @@
-using F1_Web_App.Data;
+﻿using F1_Web_App.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,8 +23,8 @@ namespace F1_Web_App
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
             })
-                 .AddRoles<IdentityRole>()
-                 .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -36,8 +36,8 @@ namespace F1_Web_App
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseExceptionHandler("/Error/500");
+                app.UseStatusCodePagesWithReExecute("/Error/{0}");
                 app.UseHsts();
             }
 
@@ -61,7 +61,22 @@ namespace F1_Web_App
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
-            await app.RunAsync();
+            // Middleware за обработка на статус кодове
+            app.UseStatusCodePages(async context =>
+            {
+                var response = context.HttpContext.Response;
+
+                if (response.StatusCode == 404)
+                {
+                    response.Redirect("/Error/404");
+                }
+                else if (response.StatusCode == 500)
+                {
+                    response.Redirect("/Error/500");
+                }
+            });
+
+            app.Run();
         }
 
         private static async Task SeedRolesAndAssignToUsersAsync(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager)

@@ -28,10 +28,20 @@ namespace F1_Web_App.Controllers
             return View();
         }
 
+        public IActionResult TriggerError()
+        {
+            throw new Exception("This is a test exception for error 500.");
+        }
+
         [Authorize]
         public async Task<IActionResult> UserRoles()
         {
             var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
             var roles = await _userManager.GetRolesAsync(user);
             return View(roles);
         }
