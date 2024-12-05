@@ -36,6 +36,7 @@ namespace F1_Web_App.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
+          //TODO: try using attribute to validate role   [Authorize(Roles = "Administrator, Moderator")]
             if (!User.IsInRole("Administrator"))
             {
                 return Unauthorized();
@@ -64,7 +65,7 @@ namespace F1_Web_App.Controllers
             {
                 return NotFound();
             }
-
+       // TODO: Remove this check, add default value in view model -> new List
             if (model.Teams == null)
             {
                 model.Teams = new List<TeamListViewModel>();
@@ -78,6 +79,7 @@ namespace F1_Web_App.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(int id, DriverEditViewModel model)
         {
+          //TODO: try using attribute to validate role   [Authorize(Roles = "Administrator, Moderator")]
             if (!User.IsInRole("Administrator"))
             {
                 return Unauthorized();
@@ -92,7 +94,7 @@ namespace F1_Web_App.Controllers
                         TeamName = t.Name
                     })
                     .ToList();
-
+   // TODO: Remove this check, add default value in view model -> new List
                 if (model.Teams == null)
                 {
                     model.Teams = new List<TeamListViewModel>();
@@ -122,11 +124,12 @@ namespace F1_Web_App.Controllers
         [HttpGet]
         public IActionResult CreateDriver()
         {
+          //TODO: try using attribute to validate role   [Authorize(Roles = "Administrator, Moderator")]
             if (!User.IsInRole("Administrator"))
             {
                 return Unauthorized();
             }
-
+         
             var model = new DriverEditViewModel
             {
                 Teams = _context.Teams
@@ -145,13 +148,14 @@ namespace F1_Web_App.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateDriver(DriverEditViewModel model)
         {
+          //TODO: try using attribute to validate role   [Authorize(Roles = "Administrator, Moderator")]
             if (!User.IsInRole("Administrator"))
             {
                 return Unauthorized();
             }
-
+//TODO: chcek is there is a already a driver with the same number
             if (!ModelState.IsValid)
-            {
+            {   
                 model.Teams = _context.Teams
                     .Select(t => new TeamListViewModel
                     {
@@ -181,6 +185,7 @@ namespace F1_Web_App.Controllers
         [HttpGet]
         public IActionResult ConfirmDeleteDriver(int id)
         {
+          //TODO: try using attribute to validate role   [Authorize(Roles = "Administrator, Moderator")]
             if (!User.IsInRole("Administrator"))
             {
                 return Unauthorized();
@@ -262,6 +267,7 @@ namespace F1_Web_App.Controllers
         [Authorize(Roles = "Administrator, Moderator")]
         public async Task<IActionResult> StatusActiveOrAllDrivers(bool showActiveOnly = false)
         {
+          //TODO: call to list after the if, to avoid unacesary items to be loaded from db
             var drivers = await _context.Drivers.ToListAsync();
             if (showActiveOnly)
             {
