@@ -13,15 +13,28 @@
     <h5 class="mb-0">Race: @Model.CircuitName</h5>
 </div>
 
-@foreach (var result in Model.Results)
-{
-    <div class="row align-items-center mb-4 py-3">
-        <div class="col-md-12 text-start">
-            
-            <p>Driver: @result.DriverName</p>
-            <p>Driver Number: @result.DriverNumber</p>
-            <p>Team: @result.TeamName</p>
-            <p>Points: @result.Points</p>
-        </div>
-    </div>
-}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Driver Number</th>
+            <th>Driver Name</th>
+            <th>Total Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int position = 1;
+        }
+        @foreach (var result in Model.Results)
+        {
+            <tr>
+                <td>@position</td>
+                <td>@result.DriverNumber</td>
+                <td>@result.DriverName</td>
+                <td>@result.Points</td>
+            </tr>
+            position++;
+        }
+    </tbody>
+</table>
