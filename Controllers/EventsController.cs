@@ -21,7 +21,9 @@ namespace F1_Web_App.Controllers
 
         public IActionResult Index(int? page)
         {
+          // TODO: replace all  int pageSize = 10; by constant in the controller
             int pageSize = 10;
+            //TODO: Check for not only null, but also 0
             int pageNumber = (page ?? 1);
 
             var events = _context.Events.OrderBy(e => e.EventDate).ToPagedList(pageNumber, pageSize);
@@ -31,9 +33,13 @@ namespace F1_Web_App.Controllers
 
         public async Task<IActionResult> List(int? year, int? page)
         {
+           // TODO: replace all  int pageSize = 10; by constant in the controller
             int pageSize = 10;
+             //TODO: Check for not only null, but also 0
             int pageNumber = (page ?? 1);
 
+
+// TODO: don't need .AsQueryable();
             var eventsQuery = _context.Events.AsQueryable();
 
             if (year.HasValue)
